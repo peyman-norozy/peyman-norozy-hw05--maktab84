@@ -1,30 +1,29 @@
-let pedometer = {
-  step: 0,
-  increase() {
-    this.step += 1;
+let specification = [
+  {
+    fName: "Peyman",
+    age: 22,
   },
-  decrease() {
-    this.step -= 1;
+  {
+    fName: "Beniamin",
+    age: 30,
   },
-  reset() {
-    this.step = 0;
+  {
+    fName: "Amir hosein",
+    age: 10,
   },
-  read() {
-    alert(this.step);
+  {
+    fName: "Soheil",
+    age: 80,
   },
-};
+  {
+    fName: "Ali",
+    age: 5,
+  },
+];
 
-while (true) {
-  let entery = prompt("you can set (inc, dec, res, read):");
-  if (entery === "inc") {
-    pedometer.increase();
-  } else if (entery === "dec") {
-    pedometer.decrease();
-  } else if (entery === "res") {
-    pedometer.reset();
-  } else if (entery === "read") {
-    pedometer.read();
-  } else {
-    break;
-  }
-}
+let sor = specification.sort((a, b) => {
+  if (a.age > b.age) return 1;
+  if (a.age < b.age) return -1;
+  if (a.age == b.age) return 0;
+});
+console.log(sor);
