@@ -1,29 +1,22 @@
-let specification = [
-  {
-    fName: "Peyman",
-    age: 22,
-  },
-  {
-    fName: "Beniamin",
-    age: 30,
-  },
-  {
-    fName: "Amir hosein",
-    age: 10,
-  },
-  {
-    fName: "Soheil",
-    age: 80,
-  },
-  {
-    fName: "Ali",
-    age: 5,
-  },
-];
+const MessageAndLocation = {
+  top: 200,
+  right: 500,
+  html: "Hello!",
+};
 
-let sor = specification.sort((a, b) => {
-  if (a.age > b.age) return 1;
-  if (a.age < b.age) return -1;
-  if (a.age == b.age) return 0;
-});
-console.log(sor);
+function showNotification(mal) {
+  const body = document.querySelector("body");
+  body.style.width = "100%";
+  body.style.height = "100vh";
+  const newP = document.createElement("p");
+  newP.innerText = mal.html;
+  body.appendChild(newP);
+  body.style.position = "relative";
+  newP.style.position = "absolute";
+  newP.style.top = String(MessageAndLocation.top) + "px";
+  newP.style.right = String(MessageAndLocation.right) + "px";
+}
+
+showNotification(MessageAndLocation);
+
+console.log(String(MessageAndLocation.top));
